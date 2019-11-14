@@ -22,7 +22,9 @@ repositories {
         }
     }
 }
-
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
 dependencies {
     // Pick only one of these and read the comment in the repositories block.
     compileOnly 'org.bukkit:bukkit:1.14.4-R0.1-SNAPSHOT' // The Bukkit API with no shadowing.

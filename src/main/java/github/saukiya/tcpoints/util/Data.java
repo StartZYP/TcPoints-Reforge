@@ -11,10 +11,11 @@ import static github.saukiya.tcpoints.TcPoints.getPlugin;
 
 public class Data {
     private static PlayerPoints playerPoints;
-    public static Boolean loadData() {
+    public static void loadData() {
         Plugin plugin = getPlugin().getServer().getPluginManager().getPlugin("PlayerPoints");
         playerPoints = PlayerPoints.class.cast(plugin);
-        return playerPoints != null;
+        System.out.println(playerPoints != null);
+        System.out.println("加载中……………………………………………………");
     }
 
 
@@ -23,7 +24,14 @@ public class Data {
     }
 
     public static int getPlayerPoints(String playerName) {
-        return playerPoints.getAPI().look(playerName);
+        //System.out.println("gegegege"+playerName);
+        //System.out.println(playerPoints.getAPI().look(Bukkit.getPlayer(playerName).getUniqueId()));
+        //System.out.println(playerPoints.getAPI().nicklook(playerName));
+        try{
+            return playerPoints.getAPI().look(playerName);
+        }catch (NullPointerException e){
+            return 0;
+        }
     }
 
     public static void addPlayerPoints(String playerName, int addPoints) {
