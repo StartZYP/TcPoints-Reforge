@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="[点券]PlayerPoints">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/libs/[点券]PlayerPoints.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

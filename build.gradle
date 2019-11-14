@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'com.ipedg.minecraft'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+    flatDir {  dirs ("libs")}
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+
+        // As of Gradle 5.1, you can limit this to only those
+        // dependencies you expect from it
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+}
+
+dependencies {
+    // Pick only one of these and read the comment in the repositories block.
+    compileOnly 'org.bukkit:bukkit:1.14.4-R0.1-SNAPSHOT' // The Bukkit API with no shadowing.
+    compile fileTree(dir: 'libs', include: [ '*.jar'])
+}

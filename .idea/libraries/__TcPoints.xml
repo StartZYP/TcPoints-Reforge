@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="[天策府修为]TcPoints">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/libs/[天策府修为]TcPoints.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
